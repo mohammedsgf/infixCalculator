@@ -4,8 +4,9 @@ public class InfixEvaluator {
 	private static ArrayStack<String> opStack=new ArrayStack<String>();
 	private static ArrayStack<Double> evaluter=new ArrayStack<Double>();
 	private static StringBuilder postfixExp=new StringBuilder();
-	
+	private static int rightprnth;
 	private static Character chrs;
+	
 	public static void main(String[] args) {
 		
 		
@@ -46,13 +47,13 @@ public class InfixEvaluator {
             	}
 //----------------------------------------------------------
             	if(chrs.equals('(')) {
-            		//do nothing
+            		rightprnth++;
             	}
             	else if(chrs.equals(')')) {
             		
             		int oldOP=decodeOp(opStack.peek());
             		prefixEvaluator(oldOP);
-            		
+            		rightprnth--;
             		if(i==inExp.length()-1) { //if i is in the last index 
                     	
             			while(!opStack.isEmpty()) {
@@ -71,7 +72,9 @@ public class InfixEvaluator {
             			opStack.push(""+chrs);
             		}
             		else {
-            			prefixEvaluator(oldOP);
+            			if(rightprnth==0) {
+            				prefixEvaluator(oldOP);
+            			}
             			opStack.push(""+chrs);
             		}
             	}
