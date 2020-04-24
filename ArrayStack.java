@@ -1,5 +1,13 @@
 import java.util.ArrayDeque;
-
+/**
+ * 
+ * ArrayStack class implemented using the java API ArrayDeque<E>.
+ * 
+ * @author Mohammed A. Alsaggaf
+ * @since 4-3-2020
+ * @version 1.0 
+ *
+ */
 public class ArrayStack<E> {
 	
 	private ArrayDeque<E> stack;

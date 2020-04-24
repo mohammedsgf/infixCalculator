@@ -1,9 +1,17 @@
-
+/**
+ * 
+ * This program test ArrayStack class.
+ * 
+ * @author Mohammed A. Alsaggaf
+ * @since 4-3-2020
+ * @version 1.0 
+ *
+ */
 public class TesetArrayStack {
 
 	public static void main(String[] args) {
 
-		ArrayStack<Integer> test=new ArrayStack(); 
+		ArrayStack<Integer> test=new ArrayStack<Integer>(); 
 		
 		// test pushing
 		System.out.println("Pushing from 0 to 9");
